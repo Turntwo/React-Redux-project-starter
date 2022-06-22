@@ -12,10 +12,18 @@ const Login = ({ users, loggedInUser, dispatch }) => {
   };
 
   return loggedInUser ? (
-    <div>
-      <h3>Welcome {users[loggedInUser].name}</h3>
-      <button onClick={(e) => handleLogOut(e)}>Logout</button>
-    </div>
+    <h3>
+      Welcome{" "}
+      <img
+        src={users[loggedInUser].avatarURL}
+        alt="Avatar for users[loggedInUser].name}"
+        height="24"
+      />
+      {users[loggedInUser].name}
+      <button className="logout-button" onClick={(e) => handleLogOut(e)}>
+        Logout
+      </button>
+    </h3>
   ) : (
     <select onChange={(e) => handleLogin(e)} placeholder="Who are you?">
       <option key="*NONE*" value="">
