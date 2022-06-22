@@ -12,7 +12,7 @@ function receiveData(users, questions) {
 
 export function handleInitialData() {
   return (dispatch) => {
-    Promise.all([_getUsers(), _getQuestions]).then(([users, questions]) => {
+    Promise.all([_getUsers(), _getQuestions()]).then(([users, questions]) => {
       console.log("Users", users);
       console.log("Questions", questions);
       dispatch(receiveData(users, questions));

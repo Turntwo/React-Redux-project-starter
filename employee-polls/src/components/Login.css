@@ -1,0 +1,16 @@
+.logout-button {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.login-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.login-select {
+  float: right;
+  margin-right: 2em;
+}

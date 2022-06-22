@@ -1,14 +1,7 @@
-import { connect } from "react-redux";
+import QuestionList from "./QuestionList";
 
 const Dashboard = () => {
-  return <h1>Dashboard</h1>;
+  return <QuestionList />;
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    users: state.users,
-    loggedInUser: state.loggedInUser,
-  };
-};
-
-export default connect(mapStateToProps)(Dashboard);
+export default Dashboard;

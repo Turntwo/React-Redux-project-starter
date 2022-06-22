@@ -1,5 +1,6 @@
+import "./Login.css";
 import { connect } from "react-redux";
-import { loginUser, logoutUser } from "../actions/users.js";
+import { loginUser, logoutUser } from "../actions/loggedInUser.js";
 
 const Login = ({ users, loggedInUser, dispatch }) => {
   const handleLogin = (e) => {
@@ -12,7 +13,7 @@ const Login = ({ users, loggedInUser, dispatch }) => {
   };
 
   return loggedInUser ? (
-    <h3>
+    <h3 className="login-display">
       Welcome{" "}
       <img
         src={users[loggedInUser].avatarURL}
@@ -25,7 +26,11 @@ const Login = ({ users, loggedInUser, dispatch }) => {
       </button>
     </h3>
   ) : (
-    <select onChange={(e) => handleLogin(e)} placeholder="Who are you?">
+    <select
+      className="login-select"
+      onChange={(e) => handleLogin(e)}
+      placeholder="Who are you?"
+    >
       <option key="*NONE*" value="">
         Who are you?
       </option>

@@ -37,6 +37,9 @@
   }
 }
 
-.logout-button {
-  margin: 1em;
+.header-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-decoration: none;
 }

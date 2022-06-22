@@ -3,26 +3,62 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import Login from "./Login";
+import CheckLogin from "./CheckLogin";
 import Dashboard from "./Dashboard";
 import Question from "./Question";
 import Leaderboard from "./Leaderboard";
 import NewQuestion from "./NewQuestion";
 import { handleInitialData } from "../actions/shared";
+import Nav from "./Nav";
 
 function App({ dispatch }) {
   useEffect(() => {
     dispatch(handleInitialData());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="App">
-      {/* <header className="App-header">Employee Polls Project</header> */}
-      <Login />
+      <h1>Employee Polls Project</h1>
+      <header>
+        <Login />
+        <Nav />
+        <hr />
+      </header>
+
       <Routes>
-        <Route path="/" exact element={<Dashboard />} />
-        <Route path="/question/:questionId" element={<Question />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/new" element={<NewQuestion />} />
+        <Route
+          path="/"
+          exact
+          element={
+            <CheckLogin>
+              <Dashboard />
+            </CheckLogin>
+          }
+        />
+        <Route
+          path="/question/:questionId"
+          element={
+            <CheckLogin>
+              <Question />
+            </CheckLogin>
+          }
+        />
+        <Route
+          path="/leaderboard"
+          element={
+            <CheckLogin>
+              <Leaderboard />
+            </CheckLogin>
+          }
+        />
+        <Route
+          path="/new"
+          element={
+            <CheckLogin>
+              <NewQuestion />
+            </CheckLogin>
+          }
+        />
       </Routes>
     </div>
   );
