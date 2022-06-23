@@ -35,6 +35,7 @@ const NewQuestion = ({ dispatch }) => {
         </div>
         <div>
           <input
+            data-testid="optionOne"
             type="text"
             placerholder="Option One"
             value={optionOne}
@@ -46,6 +47,7 @@ const NewQuestion = ({ dispatch }) => {
         </div>
         <div>
           <input
+            data-testid="optionTwo"
             type="text"
             placerholder="Option Two"
             value={optionTwo}
