@@ -12,7 +12,7 @@ const Nav = () => {
           <Link to="/leaderboard">Leaderboard</Link>
         </li>
         <li>
-          <Link to="/new">New</Link>
+          <Link to="/add">New</Link>
         </li>
       </ul>
     </nav>

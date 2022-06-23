@@ -1,0 +1,36 @@
+.author-image {
+  height: 64px;
+  margin: 0.5em;
+}
+
+.poll-button {
+  margin: 1em;
+  width: 30%;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.poll-button :hover {
+  background-color: lightgreen;
+}
+
+.selected-answer {
+  font-weight: bold;
+  border-color: green;
+  background-color: lightgreen;
+  color: green;
+}
+
+.unselected-answer :hover {
+  background-color: pink;
+}
+
+.unselected-answer {
+  border-color: red;
+  background-color: pink;
+}
+
+.vote-count {
+  margin: 1em;
+  font-size: smaller;
+}

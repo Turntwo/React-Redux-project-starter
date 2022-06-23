@@ -24,6 +24,7 @@ const QuestionList = ({ users, questions, loggedInUser, dispatch }) => {
               ? !userAnsweredQuestions.includes(q.id)
               : userAnsweredQuestions.includes(q.id)
           )
+          .sort((a, b) => b.timestamp - a.timestamp)
           .map((q) => (
             <QuestionListDisplay
               key={q.id}

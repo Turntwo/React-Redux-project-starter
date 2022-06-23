@@ -52,7 +52,7 @@ function App({ dispatch }) {
           }
         />
         <Route
-          path="/new"
+          path="/add"
           element={
             <CheckLogin>
               <NewQuestion />

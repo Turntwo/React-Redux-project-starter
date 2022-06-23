@@ -1,0 +1,13 @@
+.leader-table {
+  width: 75%;
+  margin: auto;
+}
+
+.leader-table-header {
+  border: 1px solid;
+  background-color: lightcyan;
+}
+
+.leaderboard-image {
+  height: 24px;
+}

@@ -1,15 +1,19 @@
-export const ADD_QUESTION = "ADD_QUESTION";
-export const ANSWER_QUESTION = "ANSWER_QUESTION";
+import { ANSWER_QUESTION } from "../actions/shared";
 
-export function addQuestion(userId) {
+export const ADD_QUESTION = "ADD_QUESTION";
+
+export function saveQuestion(question) {
   return {
     type: ADD_QUESTION,
-    userId,
+    question,
   };
 }
 
-export function answerQuestion() {
+export function answerQuestion(qid, answer, loggedInUser) {
   return {
     type: ANSWER_QUESTION,
+    qid: qid,
+    answer: answer,
+    loggedInUser: loggedInUser,
   };
 }
