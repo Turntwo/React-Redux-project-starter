@@ -3,18 +3,28 @@ import { connect } from "react-redux";
 import UserDisplay from "./UserDisplay";
 
 const Leaderboard = ({ users }) => {
+  const getCounts = (user) => {
+    return Object.keys(user.answers).length + user.questions.length;
+  };
+
   return (
     <>
       <h1>Leaderboard</h1>
       <table className="leader-table">
-        <tr>
-          <th className="leader-table-header">Users</th>
-          <th className="leader-table-header">Answered</th>
-          <th className="leader-table-header">Created</th>
-        </tr>
-        {Object.values(users).map((user) => (
-          <UserDisplay key={user.id} user={user} />
-        ))}
+        <thead>
+          <tr>
+            <th className="leader-table-header">Users</th>
+            <th className="leader-table-header">Answered</th>
+            <th className="leader-table-header">Created</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(users)
+            .sort((a, b) => getCounts(b) - getCounts(a))
+            .map((user) => (
+              <UserDisplay key={user.id} user={user} />
+            ))}
+        </tbody>
       </table>
     </>
   );

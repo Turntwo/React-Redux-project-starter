@@ -8,6 +8,7 @@ import Dashboard from "./Dashboard";
 import Question from "./Question";
 import Leaderboard from "./Leaderboard";
 import NewQuestion from "./NewQuestion";
+import PageNotFound from "./PageNotFound";
 import { handleInitialData } from "../actions/shared";
 import Nav from "./Nav";
 
@@ -59,6 +60,7 @@ function App({ dispatch }) {
             </CheckLogin>
           }
         />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

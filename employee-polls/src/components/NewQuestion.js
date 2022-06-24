@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { connect } from "react-redux";
 import { handleAddQuestion } from "../actions/shared";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const NewQuestion = ({ dispatch }) => {
   const [optionOne, setOptionOne] = useState("");
   const [optionTwo, setOptionTwo] = useState("");
   const [enabled, setEnabled] = useState(false);
+
+  const nav = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,6 +16,7 @@ const NewQuestion = ({ dispatch }) => {
     setOptionOne("");
     setOptionTwo("");
     setEnabled("");
+    nav("/");
   };
 
   const handleOptionChange = (e, option) => {
