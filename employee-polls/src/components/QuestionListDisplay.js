@@ -9,7 +9,7 @@ const QuestionListDisplay = ({ question, author }) => {
 
   return (
     <li className="question-list-display">
-      <Link to={`/question/${question.id}`}>
+      <Link to={`/questions/${question.id}`}>
         <img
           src={author.avatarURL}
           alt="Avatar for author.name}"

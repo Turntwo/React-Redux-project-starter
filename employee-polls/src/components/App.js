@@ -37,7 +37,7 @@ function App({ dispatch }) {
           }
         />
         <Route
-          path="/question/:questionId"
+          path="/questions/:questionId"
           element={
             <CheckLogin>
               <Question />
@@ -60,6 +60,7 @@ function App({ dispatch }) {
             </CheckLogin>
           }
         />
+        <Route path="/notfound" element={<PageNotFound />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

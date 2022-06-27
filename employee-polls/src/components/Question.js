@@ -1,12 +1,16 @@
 import "./Question.css";
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { handleAnswerQuestion } from "../actions/shared";
+import PageNotFound from "./PageNotFound";
 
 const Question = ({ questions, loggedInUser, users, dispatch }) => {
   const params = useParams();
   const question = questions[params.questionId];
-  const author = users[question.author];
+
+  if (!question) return <Navigate to="/notfound" />;
+
+  const author = users[question?.author];
 
   const hasLoggedInUserAnswered = Object.keys(
     users[loggedInUser].answers
@@ -33,11 +37,13 @@ const Question = ({ questions, loggedInUser, users, dispatch }) => {
     return ((votes * 100) / (optionOneVotes + optionTwoVotes)).toFixed(2);
   };
 
-  return (
+  return question === undefined ? (
+    <PageNotFound />
+  ) : (
     <>
-      <h3>Poll by {author.name}</h3>
+      <h3>Poll by {author?.name}</h3>
       <img
-        src={author.avatarURL}
+        src={author?.avatarURL}
         alt="Avatar for author.name"
         className="author-image"
       />
