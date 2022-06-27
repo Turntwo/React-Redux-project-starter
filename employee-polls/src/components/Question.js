@@ -37,9 +37,7 @@ const Question = ({ questions, loggedInUser, users, dispatch }) => {
     return ((votes * 100) / (optionOneVotes + optionTwoVotes)).toFixed(2);
   };
 
-  return question === undefined ? (
-    <PageNotFound />
-  ) : (
+  return (
     <>
       <h3>Poll by {author?.name}</h3>
       <img
